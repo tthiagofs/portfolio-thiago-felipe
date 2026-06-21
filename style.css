@@ -1,0 +1,193 @@
+/* style.css - Design Moderno e Minimalista */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+:root {
+    --bg-color: #121826; /* Fundo azul bem escuro, quase preto */
+    --text-primary: #F8FAFC; /* Branco gelo para títulos */
+    --text-secondary: #94A3B8; /* Cinza claro para parágrafos */
+    --accent-color: #5EE0C2; /* Verde/Ciano igual ao da foto de referência */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between; /* Separa a logo do menu */
+    align-items: center;
+}
+
+.logo {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.ativo {
+    color: var(--accent-color);
+}
+
+/* --- Área Principal --- */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Estilos da Página Inicial (Hero Section) --- */
+.hero {
+    margin-top: 40px;
+}
+
+.perfil-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color); /* Borda colorida redonda */
+    object-fit: cover;
+    margin-bottom: 30px;
+    /* Um leve brilho ao redor da foto para dar charme */
+    box-shadow: 0 0 15px rgba(94, 224, 194, 0.2); 
+}
+
+.saudacao {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.nome-destaque {
+    color: var(--text-primary);
+    font-size: 4rem; /* Nome bem grande como na referência */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.texto-apresentacao {
+    font-size: 1.15rem;
+    max-width: 650px;
+}
+
+.texto-apresentacao p {
+    margin-bottom: 20px;
+}
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+/* --- Estilos gerais para as outras páginas --- */
+h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-position: inside;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Elementos do Formulário */
+form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin-top: 30px;}
+label { color: var(--text-primary); font-size: 0.9rem;}
+input, textarea { padding: 12px; border-radius: 6px; border: 1px solid #334155; background-color: #1E293B; color: var(--text-primary); font-size: 1rem;}
+textarea { min-height: 120px; resize: vertical; }
+button { padding: 15px; background-color: var(--text-primary); color: var(--bg-color); border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.3s;}
+button:hover { background-color: var(--accent-color); }
+
+/* --- Estilos do Card de Portfólio --- */
+.projeto-card {
+    background-color: #1E293B; /* Um tom um pouco mais claro que o fundo */
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color); /* Linha lateral verde/ciano */
+    margin-top: 30px;
+}
+
+.projeto-card h2 {
+    margin-top: 0;
+    color: var(--text-primary);
+}
+
+.projeto-nota {
+    font-size: 0.85rem;
+    color: #64748B;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* --- Estilos da Galeria de Imagens do Portfólio --- */
+.galeria-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas de imagens */
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.galeria-projetos img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Efeito bacana ao passar o mouse por cima da imagem */
+.galeria-projetos img:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-color);
+    cursor: zoom-in; /* Muda o mouse para uma lupa, indicando que pode clicar */
+}
+
+/* Responsividade: deixa as imagens em 1 coluna só se a tela for de celular */
+@media (max-width: 600px) {
+    .galeria-projetos {
+        grid-template-columns: 1fr;
+    }
+}
